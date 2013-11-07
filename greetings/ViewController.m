@@ -17,13 +17,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    }
+
+-(IBAction)push:(id)sender{
+    switch([self state]){
+    case Mornig:
+        [self setState:Afternoon];
+        [[self greet] setText:@"Good Afternoon!"];
+        break;
+    case Afternoon:
+        [self setState:Evening];
+        [[self greet] setText:@"Good Evening!"];
+        break;
+    case Evening:
+        [self setState:Night];
+        [[self greet] setText:@"Good Night!"];
+        break;
+    case Night:
+        [self setState:Mornig];
+        [[self greet] setText:@"Good Morning!"];
+        break;
+    }
 }
 
 @end

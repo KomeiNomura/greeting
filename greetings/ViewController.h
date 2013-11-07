@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (weak,nonatomic) IBOutlet UILabel *greet;
+@property enum {Mornig,Afternoon,Evening,Night} state;
+
+-(IBAction)push:(id)sender;
 @end
